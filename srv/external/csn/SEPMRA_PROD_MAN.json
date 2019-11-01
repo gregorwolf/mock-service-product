@@ -1,0 +1,1128 @@
+{
+    "version": {
+        "csn": "1.0"
+    },
+    "definitions": {
+        "SEPMRA_PROD_MAN.ValidationFunctionResult": {
+            "kind": "type",
+            "elements": {
+                "IsValid": {
+                    "type": "cds.Boolean"
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.I_CurrencyType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "Currency": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 5
+                },
+                "Currency_Text": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "Decimals": {
+                    "type": "cds.Integer"
+                },
+                "CurrencyISOCode": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AlternativeCurrencyKey": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "IsPrimaryCurrencyForISOCrcy": {
+                    "type": "cds.Boolean"
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.I_DraftAdministrativeDataType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "DraftUUID": {
+                    "key": true,
+                    "type": "cds.UUID"
+                },
+                "ProcessingStartDateTime": {
+                    "type": "cds.Timestamp"
+                },
+                "InProcessByUser": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "DraftIsKeptByUser": {
+                    "type": "cds.Boolean"
+                },
+                "EnqueueStartDateTime": {
+                    "type": "cds.Timestamp"
+                },
+                "DraftIsCreatedByMe": {
+                    "type": "cds.Boolean"
+                },
+                "DraftIsLastChangedByMe": {
+                    "type": "cds.Boolean"
+                },
+                "DraftIsProcessedByMe": {
+                    "type": "cds.Boolean"
+                },
+                "CreatedByUserDescription": {
+                    "type": "cds.String",
+                    "length": 80
+                },
+                "LastChangedByUserDescription": {
+                    "type": "cds.String",
+                    "length": 80
+                },
+                "InProcessByUserDescription": {
+                    "type": "cds.String",
+                    "length": 80
+                },
+                "DraftEntityType": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "PrincipalDraftEntity": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "PrincipalDraftKey": {
+                    "type": "cds.UUID"
+                },
+                "CreationDateTime": {
+                    "type": "cds.Timestamp"
+                },
+                "CreatedByUser": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "LastChangeDateTime": {
+                    "type": "cds.Timestamp"
+                },
+                "LastChangedByUser": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "DraftAccessType": {
+                    "type": "cds.String",
+                    "length": 1
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.I_LanguageType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "Language": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "Language_Text": {
+                    "type": "cds.String",
+                    "length": 16
+                },
+                "LanguageISOCode": {
+                    "type": "cds.String",
+                    "length": 2
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_CurrencyValueHelpType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "Currency": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 5
+                },
+                "CurrencyName": {
+                    "type": "cds.String",
+                    "length": 40
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "ProductDraftUUID": {
+                    "key": true,
+                    "type": "cds.UUID"
+                },
+                "ActiveProduct": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Activation_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Copy_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Delete_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Edit_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Favorites_add_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Favorites_remove_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Favorites_toggle_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Mycart_add_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Preparation_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Review_delete_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Review_modify_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Validation_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Product_fc": {
+                    "type": "cds.Integer"
+                },
+                "DimensionUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "ProductPictureURL": {
+                    "type": "cds.String",
+                    "length": 255
+                },
+                "Supplier": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ProductBaseUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "Weight": {
+                    "type": "cds.Decimal",
+                    "precision": 13,
+                    "scale": 3
+                },
+                "WeightUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "OriginalLanguage": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "AverageRatingValue": {
+                    "type": "cds.Decimal",
+                    "precision": 4,
+                    "scale": 2
+                },
+                "Name": {
+                    "type": "cds.String",
+                    "length": 255
+                },
+                "IsActiveEntity": {
+                    "type": "cds.Boolean"
+                },
+                "HasActiveEntity": {
+                    "type": "cds.Boolean"
+                },
+                "HasDraftEntity": {
+                    "type": "cds.Boolean"
+                },
+                "Product": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ProductCategory": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "Price": {
+                    "type": "cds.Decimal",
+                    "precision": 16,
+                    "scale": 3
+                },
+                "Currency": {
+                    "type": "cds.String",
+                    "length": 5
+                },
+                "Height": {
+                    "type": "cds.Decimal",
+                    "precision": 13,
+                    "scale": 3
+                },
+                "Width": {
+                    "type": "cds.Decimal",
+                    "precision": 13,
+                    "scale": 3
+                },
+                "Depth": {
+                    "type": "cds.Decimal",
+                    "precision": 13,
+                    "scale": 3
+                },
+                "DraftAdministrativeData": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.I_DraftAdministrativeDataType"
+                },
+                "SiblingEntity": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType"
+                },
+                "to_CollaborativeReview": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ReviewType"
+                },
+                "to_CollaborativeReviewPost": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ReviewPostType",
+                    "cardinality": {
+                        "max": "*"
+                    }
+                },
+                "to_Currency": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.I_CurrencyType"
+                },
+                "to_CurrencyValueHelp": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_CurrencyValueHelpType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_CurrencyValueHelp",
+                                "Currency"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "Currency"
+                            ]
+                        }
+                    ]
+                },
+                "to_DimensionUnit": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_DimensionUnitType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_DimensionUnit",
+                                "UnitOfMeasure"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "DimensionUnit"
+                            ]
+                        }
+                    ]
+                },
+                "to_OriginalLanguage": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.I_LanguageType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_OriginalLanguage",
+                                "Language"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "OriginalLanguage"
+                            ]
+                        }
+                    ]
+                },
+                "to_PriceRange": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductPriceRangeType"
+                },
+                "to_ProductBaseUnit": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_QuantityUnitType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_ProductBaseUnit",
+                                "UnitOfMeasure"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "ProductBaseUnit"
+                            ]
+                        }
+                    ]
+                },
+                "to_ProductCategory": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_ProductCategoryType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_ProductCategory",
+                                "ProductCategory"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "ProductCategory"
+                            ]
+                        }
+                    ]
+                },
+                "to_ProductImage": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductImageType",
+                    "cardinality": {
+                        "max": "*"
+                    }
+                },
+                "to_ProductSalesData": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductSalesDataType",
+                    "cardinality": {
+                        "max": "*"
+                    }
+                },
+                "to_ProductStock": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductStockType"
+                },
+                "to_ProductTextInOriginalLang": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductTextType"
+                },
+                "to_Supplier": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_SupplierType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_Supplier",
+                                "Supplier"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "Supplier"
+                            ]
+                        }
+                    ]
+                },
+                "to_WeightUnit": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_WeightUnitType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_WeightUnit",
+                                "UnitOfMeasure"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "WeightUnit"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductImageType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "Product": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ProductImage": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 70
+                },
+                "FileName": {
+                    "type": "cds.String",
+                    "length": 255
+                },
+                "MIMEType": {
+                    "type": "cds.String",
+                    "length": 100
+                },
+                "Description": {
+                    "type": "cds.String",
+                    "length": 50
+                },
+                "CreationDateTime": {
+                    "type": "cds.Timestamp"
+                },
+                "LastChangedDateTime": {
+                    "type": "cds.Timestamp"
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductPriceRangeType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "ProductDraftUUID": {
+                    "key": true,
+                    "type": "cds.UUID"
+                },
+                "ActiveProduct": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "PriceClassification": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "to_PriceClassification": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_PriceClassificationType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_PriceClassification",
+                                "PriceClassification"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "PriceClassification"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductSalesDataType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "ID": {
+                    "key": true,
+                    "type": "cds.LargeString"
+                },
+                "Product": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "DeliveryDateTime": {
+                    "type": "cds.Date"
+                },
+                "DeliveryMonth": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "DeliveryMonth_Text": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Revenue": {
+                    "type": "cds.Decimal",
+                    "precision": 16,
+                    "scale": 3
+                },
+                "Currency": {
+                    "type": "cds.String",
+                    "length": 5
+                },
+                "to_Currency": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.I_CurrencyType"
+                },
+                "to_MonthName": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_MonthNameType"
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductStockType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "Product": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Quantity": {
+                    "type": "cds.Decimal",
+                    "precision": 13,
+                    "scale": 3
+                },
+                "QuantityUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "StockAvailability": {
+                    "type": "cds.Integer"
+                },
+                "to_QuantityUnit": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_QuantityUnitType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_QuantityUnit",
+                                "UnitOfMeasure"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "QuantityUnit"
+                            ]
+                        }
+                    ]
+                },
+                "to_StockAvailability": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_StockAvailabilityType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_StockAvailability",
+                                "StockAvailability"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "StockAvailability"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductTextType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "ProductTextDraftUUID": {
+                    "key": true,
+                    "type": "cds.UUID"
+                },
+                "ActiveProduct": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ActiveLanguage": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "Preparation_ac": {
+                    "type": "cds.Boolean"
+                },
+                "Validation_ac": {
+                    "type": "cds.Boolean"
+                },
+                "HasActiveEntity": {
+                    "type": "cds.Boolean"
+                },
+                "HasDraftEntity": {
+                    "type": "cds.Boolean"
+                },
+                "Language": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "Name": {
+                    "type": "cds.String",
+                    "length": 255
+                },
+                "Description": {
+                    "type": "cds.String",
+                    "length": 255
+                },
+                "IsActiveEntity": {
+                    "type": "cds.Boolean"
+                },
+                "DraftAdministrativeData": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.I_DraftAdministrativeDataType"
+                },
+                "SiblingEntity": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductTextType"
+                },
+                "to_Language": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.I_LanguageType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_Language",
+                                "Language"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "Language"
+                            ]
+                        }
+                    ]
+                },
+                "to_Product": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType"
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_PD_ReviewType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "Product": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "AverageRatingValue": {
+                    "type": "cds.Decimal",
+                    "precision": 4,
+                    "scale": 2
+                },
+                "NumberOfReviewPosts": {
+                    "type": "cds.Integer"
+                },
+                "to_ReviewPost": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_C_PD_ReviewPostType",
+                    "cardinality": {
+                        "max": "*"
+                    }
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_PD_ReviewPostType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "ProductReviewPostUUID": {
+                    "key": true,
+                    "type": "cds.UUID"
+                },
+                "Product": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ReviewPostText": {
+                    "type": "cds.LargeString"
+                },
+                "ReviewRatingValue": {
+                    "type": "cds.Integer"
+                },
+                "NumberOfAffirmativeAnswers": {
+                    "type": "cds.Integer"
+                },
+                "ReviewDateTime": {
+                    "type": "cds.Timestamp"
+                },
+                "IsReviewOfCurrentUser": {
+                    "type": "cds.Boolean"
+                },
+                "UserDisplayName": {
+                    "type": "cds.String",
+                    "length": 81
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_C_PD_SupplierType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "Supplier": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "CompanyName": {
+                    "type": "cds.String",
+                    "length": 80
+                },
+                "EmailAddress": {
+                    "type": "cds.String",
+                    "length": 255
+                },
+                "FaxNumber": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "PhoneNumber": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "URL": {
+                    "type": "cds.LargeString"
+                },
+                "to_Address": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_AddressType"
+                },
+                "to_ContactPerson": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_ContactPersonType",
+                    "cardinality": {
+                        "max": "*"
+                    }
+                },
+                "to_PrimaryContactPerson": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_ContactPersonType"
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_AddressType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "AddressUUID": {
+                    "key": true,
+                    "type": "cds.UUID"
+                },
+                "Longitude": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 12
+                },
+                "FormattedAddress": {
+                    "type": "cds.String",
+                    "length": 129
+                },
+                "AddressType": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "CityName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "PostalCode": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "StreetName": {
+                    "type": "cds.String",
+                    "length": 60
+                },
+                "HouseNumber": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Country": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AddressValidityStartDate": {
+                    "type": "cds.Date"
+                },
+                "AddressValidityEndDate": {
+                    "type": "cds.Date"
+                },
+                "Latitude": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 12
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_ContactPersonType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "ContactPersonUUID": {
+                    "key": true,
+                    "type": "cds.UUID"
+                },
+                "FaxNumber": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "MobilePhoneNumber": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "EmailAddress": {
+                    "type": "cds.String",
+                    "length": 255
+                },
+                "PreferredLanguage": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "BirthDate": {
+                    "type": "cds.Date"
+                },
+                "FormattedContactName": {
+                    "type": "cds.String",
+                    "length": 81
+                },
+                "ContactPerson": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "FirstName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "MiddleName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "LastName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "SystemUser": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "Initials": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "GenderCode": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "PhoneNumber": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "to_Address": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_AddressType"
+                },
+                "to_PreferredLanguage": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.I_LanguageType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_PreferredLanguage",
+                                "Language"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "PreferredLanguage"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_DimensionUnitType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "UnitOfMeasure": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "UnitOfMeasure_Text": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "UnitOfMeasureISOCode": {
+                    "type": "cds.String",
+                    "length": 3
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_MonthNameType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "Language": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "CalendarMonth": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "MonthName": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "MonthShortName": {
+                    "type": "cds.String",
+                    "length": 3
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_PriceClassificationType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "PriceClassification": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "PriceClassification_Text": {
+                    "type": "cds.String",
+                    "length": 60
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_ProductCategoryType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "ProductCategory": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "MainProductCategory": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "to_MainCategory": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_ProductMainCategoryType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_MainCategory",
+                                "MainProductCategory"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "MainProductCategory"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_ProductMainCategoryType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "MainProductCategory": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "to_Category": {
+                    "type": "cds.Association",
+                    "target": "SEPMRA_PROD_MAN.SEPMRA_I_ProductCategoryType",
+                    "cardinality": {
+                        "max": "*"
+                    },
+                    "on": [
+                        {
+                            "ref": [
+                                "to_Category",
+                                "MainProductCategory"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "MainProductCategory"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_QuantityUnitType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "UnitOfMeasure": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "UnitOfMeasure_Text": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "UnitOfMeasureISOCode": {
+                    "type": "cds.String",
+                    "length": 3
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_StockAvailabilityType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "StockAvailability": {
+                    "key": true,
+                    "type": "cds.Integer"
+                },
+                "StockAvailability_Text": {
+                    "type": "cds.String",
+                    "length": 60
+                }
+            }
+        },
+        "SEPMRA_PROD_MAN.SEPMRA_I_WeightUnitType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "UnitOfMeasure": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "UnitOfMeasure_Text": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "UnitOfMeasureISOCode": {
+                    "type": "cds.String",
+                    "length": 3
+                }
+            }
+        }
+    }
+}
