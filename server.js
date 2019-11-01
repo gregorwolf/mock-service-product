@@ -16,9 +16,15 @@ cds.deploy('srv').to('sqlite::memory:',{primary:true}) .then (async db => {
 	console.log('Adding sample data...')
 	const product = db.run (INSERT.into (Product+'') .entries (
 		{
-			Product: '1003764',
-			Price: '28238',
-			Name: 'Dietmar-Hopp-Allee',
+			Product: '123',
+			Price: '14.30',
+			Name: 'Transp.Tofflemire Matrizen Nr.5936',
+			ActiveProduct: true
+		},
+		{
+			Product: '190993',
+			Price: '31.50',
+			Name: 'Vita Modelling FLUID 250ml',
 			ActiveProduct: true
 		}
 	))
