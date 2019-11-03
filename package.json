@@ -1,13 +1,20 @@
 {
-  "name": "teched2019-mission-mock-service-bupa",
-  "description": "Basic Business Partner mock service for TechEd 2019 Mission",
-  "repository": "https://github.com/SAP-samples/teched2019-mission-mock-service-bupa",
-  "version": "1.0.0",
+  "name": "mock-service-product",
+  "description": "Basic Product mock service",
+  "version": "0.0.1",
+  "repository": "https://github.com/gregorwolf/mock-service-product",
+  "license": "MIT",
   "engines": {
     "node": "^8.9"
   },
+  "scripts": {
+    "start": "node server.js",
+    "build:docker": "docker build -t gregorwolf/mock-service-product .",
+    "run:docker": "docker run -p 49160:3000 -d gregorwolf/mock-service-product"
+  },  
   "dependencies": {
     "@sap/cds": "latest",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.4.1",
     "express": "^4.17.1"
   },
   "devDependencies": {
