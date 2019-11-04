@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build:docker": "docker build -t gregorwolf/mock-service-product .",
+    "build:docker:amd64": "docker build -t gregorwolf/mock-service-product:amd64 .",
+    "build:docker:arm32v6": "docker build -t gregorwolf/mock-service-product:arm32v6 .",
     "run:docker": "docker run -p 49160:3000 -d gregorwolf/mock-service-product"
   },  
   "dependencies": {
