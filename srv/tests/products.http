@@ -1,2 +1,2 @@
 ### Read Products with OData V2 from Docker Container
-GET http://localhost:49160/v2/sap/opu/odata/sap/SEPMRA_PROD_MAN/SEPMRA_C_PD_Product
+GET http://localhost:3000/v2/sap/opu/odata/sap/SEPMRA_PROD_MAN/SEPMRA_C_PD_Product

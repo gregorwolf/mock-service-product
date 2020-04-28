@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:12
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies
@@ -13,4 +13,4 @@ RUN npm install --production
 # Bundle app source
 COPY . .
 EXPOSE 3000
-CMD [ "node", "server.js" ]
+CMD [ "npm", "start" ]

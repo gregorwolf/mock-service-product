@@ -7,18 +7,29 @@
   "engines": {
     "node": "^8.9"
   },
+  "config": {
+    "entrypoint": "server.js"
+  },
   "scripts": {
-    "start": "node server.js",
+    "start": "node $npm_package_config_entrypoint",
+    "debug": "node --inspect=0.0.0.0:9229 $npm_package_config_entrypoint",
+    "debug:brk": "node --inspect-brk=0.0.0.0:9229 $npm_package_config_entrypoint",
+    "debug:legacy": "node --debug=0.0.0.0:5858 $npm_package_config_entrypoint",
     "build:docker:amd64": "docker build -t gregorwolf/mock-service-product:amd64 .",
     "build:docker:arm32v6": "docker build -t gregorwolf/mock-service-product:arm32v6 .",
-    "run:docker": "docker run -p 49160:3000 -d gregorwolf/mock-service-product"
-  },  
+    "run:docker": "docker run -p 3000:3000 -d gregorwolf/mock-service-product"
+  },
   "dependencies": {
-    "@sap/cds": "latest",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.4.1",
-    "express": "^4.17.1"
+    "@sap/cds": "3.33.1",
+    "@sap/cds-odata-v2-adapter-proxy": "1.4.25",
+    "express": "^4.17.1",
+    "sqlite3": "^4.2.0"
+  },
+  "nodemonConfig": {
+    "env": {
+      "NODE_HEAPDUMP_OPTIONS": "nosignal"
+    }
   },
   "devDependencies": {
-    "sqlite3": "^4.0.9"
   }
 }
