@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "node $npm_package_config_entrypoint",
-    "start:local": "PORT=3000 cds run --mocked --in-memory",
+    "start:local": "cross-env PORT=3000 cds run --mocked --in-memory",
     "debug": "node --inspect=0.0.0.0:9229 $npm_package_config_entrypoint",
     "debug:brk": "node --inspect-brk=0.0.0.0:9229 $npm_package_config_entrypoint",
     "debug:legacy": "node --debug=0.0.0.0:5858 $npm_package_config_entrypoint",
@@ -28,10 +28,13 @@
     "express": "^4.17.1",
     "sqlite3": "^5.0.0"
   },
+  "devDependencies": {
+    "@sap/edmx2csn": "^1.0.9",
+    "cross-env": "^7.0.2"
+  },
   "nodemonConfig": {
     "env": {
       "NODE_HEAPDUMP_OPTIONS": "nosignal"
     }
-  },
-  "devDependencies": {}
+  }
 }
