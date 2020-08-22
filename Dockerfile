@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:erbium-alpine
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies

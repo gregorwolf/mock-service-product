@@ -1,0 +1,14 @@
+[
+    {
+        "Product": "123",
+        "Price": "14.30",
+        "Name": "Transp.Tofflemire Matrizen Nr.5936",
+        "ActiveProduct": true
+    },
+    {
+        "Product": "190993",
+        "Price": "31.50",
+        "Name": "Vita Modelling FLUID 250ml",
+        "ActiveProduct": true
+    }
+]

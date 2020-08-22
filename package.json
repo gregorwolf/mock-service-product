@@ -12,24 +12,26 @@
   },
   "scripts": {
     "start": "node $npm_package_config_entrypoint",
+    "start:local": "PORT=3000 cds run --mocked --in-memory",
     "debug": "node --inspect=0.0.0.0:9229 $npm_package_config_entrypoint",
     "debug:brk": "node --inspect-brk=0.0.0.0:9229 $npm_package_config_entrypoint",
     "debug:legacy": "node --debug=0.0.0.0:5858 $npm_package_config_entrypoint",
     "build:docker:amd64": "docker build -t gregorwolf/mock-service-product:amd64 .",
     "build:docker:arm32v6": "docker build -t gregorwolf/mock-service-product:arm32v6 .",
-    "run:docker": "docker run -p 3000:3000 -d gregorwolf/mock-service-product"
+    "run:docker:arm32v6": "docker run --name mock-service-product -p 3000:3000 -d gregorwolf/mock-service-product:arm32v6",
+    "run:docker:amd64": "docker run --name mock-service-product -p 3000:3000 -d gregorwolf/mock-service-product:amd64",
+    "stop:docker": "docker container stop mock-service-product"
   },
   "dependencies": {
-    "@sap/cds": "3.33.1",
-    "@sap/cds-odata-v2-adapter-proxy": "1.4.25",
+    "@sap/cds": "4.1.7",
+    "@sap/cds-odata-v2-adapter-proxy": "1.4.42",
     "express": "^4.17.1",
-    "sqlite3": "^4.2.0"
+    "sqlite3": "^5.0.0"
   },
   "nodemonConfig": {
     "env": {
       "NODE_HEAPDUMP_OPTIONS": "nosignal"
     }
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
